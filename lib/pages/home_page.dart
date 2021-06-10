@@ -19,7 +19,18 @@ class HomePage extends StatelessWidget {
               Text('Học Flutter trong $months tháng, tức $days ngày bởi $name'),
         ),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: Row(
+          children: [
+            Container(
+              child: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
