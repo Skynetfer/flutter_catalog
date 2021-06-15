@@ -19,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
               Image.asset(
                 "assets/images/login_image.png",
                 fit: BoxFit.cover,
+<<<<<<< HEAD
               ),
               SizedBox(
                 height: 20,
@@ -34,6 +35,23 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 20,
               ),
+=======
+              ),
+              SizedBox(
+                height: 20,
+                child: Text("Hello"),
+              ),
+              Text(
+                "Welcome",
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+>>>>>>> master
               Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 20.0, horizontal: 30.0),
@@ -42,10 +60,13 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       decoration: InputDecoration(
                           hintText: "Enter username", labelText: "Username"),
+<<<<<<< HEAD
                       onChanged: (value) {
                         name = value;
                         setState(() {});
                       },
+=======
+>>>>>>> master
                     ),
                     TextFormField(
                       obscureText: true,
@@ -55,6 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 20,
                     ),
+<<<<<<< HEAD
                     InkWell(
                       onTap: () async {
                         setState(() {
@@ -95,6 +117,16 @@ class _LoginPageState extends State<LoginPage> {
                     //   child: Text("Login"),
                     //   style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                     // )
+=======
+                    ElevatedButton(
+                      onPressed: () {
+                        print("Hi Cong Anhh");
+                        Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      },
+                      child: Text("Login"),
+                      style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+                    )
+>>>>>>> master
                   ],
                 ),
               )
