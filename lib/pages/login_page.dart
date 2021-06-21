@@ -31,15 +31,19 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               Image.asset(
-                "assets/images/hello_login.png",
+                "assets/images/login_image.png",
                 fit: BoxFit.cover,
               ),
               SizedBox(
                 height: 20,
-                child: Text("Hello"),
+                child: Text(
+                  "Flower Shop",
+                  style: TextStyle(color: Colors.green[400]),
+                ),
               ),
               Text(
-                "Welcome $name",
+                "Welcome",
+                // $name",
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
