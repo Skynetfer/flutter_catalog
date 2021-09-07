@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Theme.of(context).canvasColor,
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -38,16 +38,15 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20,
               child: Text(
                 "User Shop",
-                style: TextStyle(color: Colors.green[400]),
               ),
             ),
             Text(
               "Welcome",
               // $name",
               style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green),
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(
               height: 20,
@@ -91,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 20,
                     ),
                     Material(
-                      color: Colors.green,
+                      color: Theme.of(context).buttonColor,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
                       child: InkWell(
@@ -110,9 +109,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               : Text(
                                   "Login",
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
+                                    color: Colors.white,
                                   ),
                                 ),
                         ),
