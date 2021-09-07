@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item> items;
+  static List<Item>? items;
 }
 
 class Item {
@@ -13,31 +13,13 @@ class Item {
   final String image;
 
   Item({
-    this.id,
-    this.name,
-    this.desc,
-    this.price,
-    this.color,
-    this.image,
+    required this.id,
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.color,
+    required this.image,
   });
-
-  Item copyWith({
-    int id,
-    String name,
-    String desc,
-    num price,
-    String color,
-    String image,
-  }) {
-    return Item(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      desc: desc ?? this.desc,
-      price: price ?? this.price,
-      color: color ?? this.color,
-      image: image ?? this.image,
-    );
-  }
 
   Map<String, dynamic> toMap() {
     return {

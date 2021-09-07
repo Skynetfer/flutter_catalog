@@ -6,7 +6,7 @@ import 'package:flutter_catalog/widgets/drawer.dart';
 import 'package:flutter_catalog/widgets/item_widget.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -42,12 +42,13 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+        padding: EdgeInsets.all(10.0),
+        child: (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
             ? ListView.builder(
-                itemCount: CatalogModel.items.length,
+                itemExtent: 100,
+                itemCount: CatalogModel.items!.length,
                 itemBuilder: (context, index) => ItemWidget(
-                  item: CatalogModel.items[index],
+                  item: CatalogModel.items![index],
                 ),
               )
             : Center(
