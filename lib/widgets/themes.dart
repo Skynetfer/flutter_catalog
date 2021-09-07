@@ -3,7 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.deepPurple,
+        cardColor: Colors.white,
+        canvasColor: kLightColor,
+        buttonColor: kDarkColor,
         fontFamily: GoogleFonts.poppins().fontFamily,
         appBarTheme: AppBarTheme(
           color: Colors.white,
@@ -11,13 +14,27 @@ class MyTheme {
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
-          textTheme: Theme.of(context).textTheme,
         ),
       );
   static ThemeData darkTheme(BuildContext context) => ThemeData(
         brightness: Brightness.dark,
+        fontFamily: GoogleFonts.poppins().fontFamily,
+        cardColor: Colors.black,
+        canvasColor: kDarkLightColor,
+        buttonColor: kLightDarkColor,
+        appBarTheme: AppBarTheme(
+          color: Colors.black,
+          elevation: 0.0,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
+        ),
       );
-
-  static Color light = Color(0xFFF5F5F5);
-  static Color dark = Color(0xFF403B58);
+  static Color kLightColor = Color(0xFFF5F5F5);
+  static Color kDarkLightColor = Color(0xFF27272A);
+  static Color kDarkColor = Color(0xFF403B58);
+  static Color kLightDarkColor = Color(0xFF6366F1);
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:velocity_x/velocity_x.dart';
-import '../../../contants.dart';
 import 'catalog_image.dart';
 
 class CatalogItem extends StatelessWidget {
@@ -12,46 +11,65 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(
-        children: [
-          Hero(
-            tag: Key(
-              catalog.id.toString(),
+      child: Container(
+        child: Row(
+          children: [
+            Hero(
+              tag: Key(
+                catalog.id.toString(),
+              ),
+              child: CatalogImage(
+                image: catalog.image,
+              ),
             ),
-            child: CatalogImage(
-              image: catalog.image,
-            ),
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                catalog.name.text.lg.color(kDarkColor).bold.make(),
-                catalog.desc.text.textStyle(context.captionStyle!).make(),
-                10.heightBox,
-                ButtonBar(
-                  alignment: MainAxisAlignment.spaceBetween,
-                  buttonPadding: EdgeInsets.zero,
+            Container(
+              child: Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    "\$${catalog.price}".text.bold.xl.make(),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            kDarkColor,
+                    Text(
+                      catalog.name,
+                      style: Theme.of(context).textTheme.headline6!.copyWith(
+                            fontWeight: FontWeight.w600,
                           ),
-                          shape: MaterialStateProperty.all(
-                            StadiumBorder(),
-                          )),
-                      child: "Buy".text.make(),
-                    )
+                    ),
+                    Text(
+                      catalog.desc,
+                      style: TextStyle(
+                        fontSize: 13.0,
+                      ),
+                    ),
+                    10.heightBox,
+                    ButtonBar(
+                      alignment: MainAxisAlignment.spaceBetween,
+                      buttonPadding: EdgeInsets.zero,
+                      children: [
+                        Text(
+                          "\$" + catalog.price.toString(),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              context.theme.buttonColor,
+                            ),
+                            shape: MaterialStateProperty.all(
+                              StadiumBorder(),
+                            ),
+                          ),
+                          child: Text(
+                            "Add to cart",
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
-                ).pOnly(right: 8.0)
-              ],
+                ),
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

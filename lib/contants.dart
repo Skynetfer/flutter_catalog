@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // Colos that use in app
 const kSecondaryColor = Color(0xFFFE6D8E);
@@ -15,4 +16,6 @@ const kDefaultShadow = BoxShadow(
 );
 
 const kLightColor = Color(0xFFF5F5F5);
+const kDarkLightColor = Color(0xFF27272A);
 const kDarkColor = Color(0xFF403B58);
+const kLightDarkColor = Color(0xFFC084FC);
