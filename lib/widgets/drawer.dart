@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({Key key}) : super(key: key);
+  const MyDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,7 @@ class MyDrawer extends StatelessWidget {
                 accountName: Text("Doremon"),
                 accountEmail: Text("anbcxyz@gmail.com"),
                 currentAccountPicture: CircleAvatar(
+                  radius: 50.0,
                   backgroundImage: NetworkImage(imageUrl),
                 ),
               ),
