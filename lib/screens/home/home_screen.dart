@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import 'components/catalog_header.dart';
 import 'components/catalog_list.dart';
 
@@ -41,9 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.canvasColor,
+      backgroundColor: Theme.of(context).canvasColor,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: context.theme.buttonColor,
+        backgroundColor: Theme.of(context).buttonColor,
         child: Icon(Icons.shopping_cart_outlined),
         onPressed: () => Navigator.pushNamed(context, MyRoutes.homeCartRoute),
       ),
