@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/screens/auth/sign_in.dart';
+import 'package:flutter_catalog/screens/auth/sign_up.dart';
 import 'package:flutter_catalog/screens/home/home_screen.dart';
-import 'package:flutter_catalog/screens/login/login_page.dart';
 
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 
+import 'screens/auth/login.dart';
 import 'screens/home/home_cart.dart';
 
 void main() {
@@ -23,10 +25,12 @@ class MyApp extends StatelessWidget {
       // initialRoute: "/home",
       debugShowCheckedModeBanner: false,
       routes: {
-        "/": (context) => HomeScreen(),
+        "/": (context) => SignInScreen(),
         MyRoutes.homeRoute: (context) => HomeScreen(),
         MyRoutes.loginRoute: (context) => LoginScreen(),
         MyRoutes.homeCartRoute: (context) => CartHome(),
+        MyRoutes.signUpRouter: (context) => SignUpScreen(),
+        MyRoutes.signInRouter: (context) => SignInScreen(),
       },
     );
   }

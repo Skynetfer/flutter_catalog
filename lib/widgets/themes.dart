@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../contants.dart';
+
 class MyTheme {
-  static ThemeData lightTheme(BuildContext context) => ThemeData(
-        primarySwatch: Colors.deepPurple,
-        cardColor: Colors.white,
-        canvasColor: kLightColor,
-        buttonColor: kDarkColor,
-        fontFamily: GoogleFonts.poppins().fontFamily,
-        appBarTheme: AppBarTheme(
-          color: Colors.white,
-          elevation: 0.0,
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
+  static ThemeData lightTheme(BuildContext context) {
+    return ThemeData(
+      primarySwatch: Colors.deepPurple,
+      cardColor: Colors.white,
+      canvasColor: kLightColor,
+      buttonColor: kDarkColor,
+      fontFamily: GoogleFonts.poppins().fontFamily,
+      appBarTheme: AppBarTheme(
+        color: Colors.white,
+        elevation: 0.0,
+        iconTheme: IconThemeData(
+          color: Colors.black,
         ),
-      );
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        enabledBorder: outlineInputBorder,
+        border: outlineInputBorder,
+        focusedBorder: outlineInputBorder,
+      ),
+    );
+  }
+
   static ThemeData darkTheme(BuildContext context) => ThemeData(
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
@@ -31,6 +41,11 @@ class MyTheme {
           iconTheme: IconThemeData(
             color: Colors.white,
           ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: outlineInputBorder,
+          border: outlineInputBorder,
+          focusedBorder: outlineInputBorder,
         ),
       );
   static Color kLightColor = Color(0xFFF5F5F5);
